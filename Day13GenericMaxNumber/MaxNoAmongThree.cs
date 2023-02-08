@@ -17,16 +17,24 @@ namespace Day13GenericMaxNumber
             public T[] Sort(T[] values)
             {
                 Array.Sort(value);
-
                 return value;
             }
 
             public T MaxValue(params T[] values)
             {
-                var sortedValue = Sort(values);
+                var sortedValue = Sort(value);
                 return sortedValue[1];
 
             }
-        
+            public T MaxMethod()
+            {
+                var max = MaxValue(this.value);
+                return max;
+            }
+            public void PrintMaxValue()
+            {
+                var max = MaxValue(this.value);
+                Console.WriteLine($"Maximum value :{max}");
+            }
         }
     }
