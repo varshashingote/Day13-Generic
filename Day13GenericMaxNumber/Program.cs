@@ -11,8 +11,10 @@ namespace Day13GenericMaxNumber
         static void Main(string[] args)
         {
             MaxNoAmongThree maxNoAmongThree=new MaxNoAmongThree();
-            int output= MaxNoAmongThree.MaxIntegerNumberCheck(10, 80, 30);
+            int output= MaxNoAmongThree.MaxIntegerNumberCheck(10, 20, 30);
+            float output2 = MaxNoAmongThree.MaxFloatNumberCheck(12.3f, 32.3f, 44.3f);
             Console.WriteLine(output);
+            Console.WriteLine(output2);
             Console.ReadLine();
 
         }
