@@ -6,42 +6,27 @@ using System.Threading.Tasks;
 
 namespace Day13GenericMaxNumber
 {
-    public class MaxNoAmongThree<T >where T: IComparable
-    {
-        public T firstValue, secondValue, thirdValue;
-        public MaxNoAmongThree(T firstValue, T secondValue, T thirdValue)
+    public class MaximumNumber<T> where T : IComparable
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
-        }
+            public T[] value;
 
-        public  static T MaxIntegerNumberCheck(T firstValue, T secondValue, T thirdValue)
-        {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
+            public MaximumNumber(T[] value)
             {
-                return firstValue;
+                this.value = value;
             }
-            else if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
+            public T[] Sort(T[] values)
             {
-                return secondValue;
-            }
-            else if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-            {
-                return thirdValue;
-            }
-            throw new Exception("firstValue ,SecondValue and thirdValue are same");
+                Array.Sort(value);
 
-        }
-      
+                return value;
+            }
+
+            public T MaxValue(params T[] values)
+            {
+                var sortedValue = Sort(values);
+                return sortedValue[1];
+
+            }
         
-         
-        public T MaxMethod()
-        {
-            T max = MaxNoAmongThree<T>.MaxIntegerNumberCheck(this.firstValue, this.secondValue, this.thirdValue);
-            return max;
         }
-
-
     }
-}
