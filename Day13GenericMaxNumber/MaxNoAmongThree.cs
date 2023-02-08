@@ -8,6 +8,14 @@ namespace Day13GenericMaxNumber
 {
     public class MaxNoAmongThree<T >where T: IComparable
     {
+        public T firstValue, secondValue, thirdValue;
+        public MaxNoAmongThree(T firstValue, T secondValue, T thirdValue)
+        {
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+        }
+
         public  static T MaxIntegerNumberCheck(T firstValue, T secondValue, T thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
@@ -25,6 +33,15 @@ namespace Day13GenericMaxNumber
             throw new Exception("firstValue ,SecondValue and thirdValue are same");
 
         }
+      
+        
+         
+        public T MaxMethod()
+        {
+            T max = MaxNoAmongThree<T>.MaxIntegerNumberCheck(this.firstValue, this.secondValue, this.thirdValue);
+            return max;
+        }
+
 
     }
 }

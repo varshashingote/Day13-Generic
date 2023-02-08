@@ -10,14 +10,14 @@ namespace Day13GenericMaxNumber
     {
         static void Main(string[] args)
         {
-            MaxNoAmongThree<int> maxNoAmongThree=new MaxNoAmongThree<int>();
-            int output= MaxNoAmongThree<int>.MaxIntegerNumberCheck(12,34,13);
+            MaxNoAmongThree<int> maxNoAmongThree=new MaxNoAmongThree<int>(12,13,24);
+            int output = maxNoAmongThree.MaxMethod();
             Console.WriteLine(output);
-            MaxNoAmongThree<float> maxNoAmongThree1=new MaxNoAmongThree<float>();
-            float output2 = MaxNoAmongThree<float>.MaxIntegerNumberCheck(12.3f, 43.3f, 34.5f);
+            MaxNoAmongThree<float> maxNoAmongThree1=new MaxNoAmongThree<float>(12.3f, 43.3f, 34.5f);
+            float output2 = maxNoAmongThree1.MaxMethod();
             Console.WriteLine(output2);
-            MaxNoAmongThree<String>maxNoAmong2=new MaxNoAmongThree<String>();
-            String output3 = MaxNoAmongThree<String>.MaxIntegerNumberCheck("varsha", "Suraj", "Vasu");
+            MaxNoAmongThree<String>maxNoAmong2=new MaxNoAmongThree<String>("varsha", "Suraj", "Vasu");
+            String output3 = maxNoAmong2.MaxMethod();
             Console.WriteLine(output3);
             Console.ReadLine();
 
